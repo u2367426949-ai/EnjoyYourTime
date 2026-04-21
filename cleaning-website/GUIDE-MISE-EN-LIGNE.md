@@ -3,17 +3,60 @@
 ## Structure du projet
 ```
 cleaning-website/
-├── index.html          ← Site principal
-├── netlify.toml        ← Configuration Netlify
+├── index.html          ← Site V1 (principal)
+├── netlify.toml        ← Configuration Netlify V1
 ├── css/style.css
 ├── js/main.js
 ├── images/             ← Mettre les photos ici
 │   └── uploads/        ← Photos ajoutées via le CMS
 ├── data/               ← Contenu modifiable par le CMS
-└── admin/
-    ├── index.html      ← Panneau d'administration
-    └── config.yml      ← Configuration du CMS
+├── admin/
+│   ├── index.html      ← Panneau d'administration
+│   └── config.yml      ← Configuration du CMS
+└── v2/
+    ├── index.html      ← Site V2 (nouvelle version)
+    ├── netlify.toml    ← Configuration Netlify V2
+    ├── css/style.css
+    └── js/main.js
 ```
+
+---
+
+## Déployer V1 et V2 séparément (aperçu client)
+
+### Option A — URLs directes (le plus simple, fonctionne déjà)
+
+Comme Netlify publie tout le dossier racine, les deux versions sont déjà accessibles :
+- **V1** : `https://votre-site.netlify.app/`
+- **V2** : `https://votre-site.netlify.app/v2/`
+
+Partagez simplement ces deux liens à votre client.
+
+---
+
+### Option B — Deux sites Netlify séparés (URLs propres)
+
+Cela donne deux URLs distinctes du type :
+- **V1** : `https://enjoyyourtime-v1.netlify.app`
+- **V2** : `https://enjoyyourtime-v2.netlify.app`
+
+#### Configuration du site V1 (existant)
+Aucun changement — le site V1 est déjà déployé normalement.
+
+#### Configuration du site V2 (nouveau site à créer)
+
+1. Sur Netlify → **"Add new site"** → **"Import an existing project"**
+2. Choisir le **même dépôt GitHub** que le site V1
+3. Dans les paramètres de build :
+   - **Base directory** : `v2`
+   - **Publish directory** : `.` (ou laisser vide)
+   - **Build command** : laisser vide
+4. Cliquer **"Deploy site"**
+5. Renommer le site (dans "Site configuration") → ex: `enjoyyourtime-v2`
+
+Le fichier `v2/netlify.toml` sera automatiquement utilisé par ce second site.
+
+---
 
 ---
 
