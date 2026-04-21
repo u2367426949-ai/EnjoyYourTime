@@ -1,0 +1,82 @@
+# =====================================================
+# Decap CMS — Configuration EnjoyYourTime
+# Permet au client de modifier le contenu du site
+# via une interface graphique sur /admin
+# =====================================================
+
+backend:
+  name: git-gateway           # Authentification via Netlify Identity
+  branch: main                # Branche Git à modifier
+
+# Stockage des médias (photos)
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# Langue de l'interface d'administration
+locale: fr
+
+collections:
+
+  # ── 1. INFORMATIONS GÉNÉRALES ──────────────────────
+  - name: "infos"
+    label: "Informations du site"
+    files:
+
+      - label: "Coordonnées & textes principaux"
+        name: "coordonnees"
+        file: "data/coordonnees.json"
+        fields:
+          - { label: "Nom de la société",    name: "nom",        widget: "string",    default: "EnjoyYourTime" }
+          - { label: "Téléphone",            name: "telephone",  widget: "string",    default: "06 00 00 00 00" }
+          - { label: "Email",                name: "email",      widget: "string",    default: "contact@enjoyyourtime.fr" }
+          - { label: "Zone d'intervention",  name: "zone",       widget: "string",    default: "Votre ville et alentours" }
+          - { label: "Accroche Hero",        name: "hero_titre", widget: "string",    default: "Un espace propre, une tranquillité d'esprit" }
+          - { label: "Sous-titre Hero",      name: "hero_texte", widget: "text" }
+          - { label: "Stat 1 — Chiffre",     name: "stat1_nb",   widget: "string",    default: "500+" }
+          - { label: "Stat 1 — Label",       name: "stat1_lb",   widget: "string",    default: "Chantiers réalisés" }
+          - { label: "Stat 2 — Chiffre",     name: "stat2_nb",   widget: "string",    default: "100%" }
+          - { label: "Stat 2 — Label",       name: "stat2_lb",   widget: "string",    default: "Clients satisfaits" }
+          - { label: "Stat 3 — Chiffre",     name: "stat3_nb",   widget: "string",    default: "48h" }
+          - { label: "Stat 3 — Label",       name: "stat3_lb",   widget: "string",    default: "Délai d'intervention" }
+
+  # ── 2. SERVICES ────────────────────────────────────
+  - name: "services"
+    label: "Services"
+    folder: "data/services"
+    create: false             # On ne crée pas de nouveaux services depuis l'admin
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre",       name: "titre",       widget: "string" }
+      - { label: "Tag",         name: "tag",         widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - label: "Points clés (liste)"
+        name: "liste"
+        widget: "list"
+        field: { label: "Point", name: "point", widget: "string" }
+
+  # ── 3. TÉMOIGNAGES ─────────────────────────────────
+  - name: "temoignages"
+    label: "Témoignages clients"
+    folder: "data/temoignages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nom du client",  name: "nom",      widget: "string" }
+      - { label: "Rôle / Société", name: "role",     widget: "string" }
+      - { label: "Texte de l'avis", name: "avis",    widget: "text" }
+      - label: "Note (étoiles)"
+        name: "note"
+        widget: "select"
+        options: ["5", "4", "3"]
+        default: "5"
+
+  # ── 4. PHOTOS ──────────────────────────────────────
+  - name: "photos"
+    label: "Photos"
+    files:
+      - label: "Photo équipe (section Qui sommes-nous)"
+        name: "photo_equipe"
+        file: "data/photos.json"
+        fields:
+          - { label: "Photo équipe", name: "equipe", widget: "image", required: false }
+          - { label: "Texte alternatif", name: "equipe_alt", widget: "string", default: "L'équipe EnjoyYourTime" }
