@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proposition Commerciale — EnjoyYourTime</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue:    #0ea5e9;
+      --indigo:  #6366f1;
+      --dark:    #0f172a;
+      --dark2:   #1e293b;
+      --muted:   #64748b;
+      --border:  #e2e8f0;
+      --light:   #f8fafc;
+      --grad:    linear-gradient(135deg, #0ea5e9, #6366f1);
+    }
+    html { font-size: 15px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    strong { font-weight: 600; }
+    a { color: var(--blue); text-decoration: none; }
+
+    /* ── LAYOUT ── */
+    .page {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.1);
+    }
+
+    /* ── HEADER ── */
+    .doc-header {
+      background: var(--dark);
+      padding: 3rem 3.5rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .doc-header::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, rgba(14,165,233,.18), transparent 70%);
+      border-radius: 50%;
+    }
+    .doc-header::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(99,102,241,.15), transparent 70%);
+      border-radius: 50%;
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 2.5rem;
+    }
+    .header-logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .header-logo span {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .header-meta {
+      text-align: right;
+      color: rgba(255,255,255,.5);
+      font-size: .78rem;
+    }
+    .header-meta strong { color: rgba(255,255,255,.85); display: block; font-size: .82rem; }
+    .doc-tag {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: rgba(14,165,233,.12);
+      border: 1px solid rgba(14,165,233,.25);
+      padding: .3rem .9rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    .doc-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: white;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      position: relative;
+      z-index: 1;
+      margin-bottom: .6rem;
+    }
+    .doc-title em {
+      font-style: normal;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .doc-subtitle {
+      color: rgba(255,255,255,.55);
+      font-size: .9rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── BODY ── */
+    .doc-body { padding: 3rem 3.5rem; }
+
+    /* ── SEPARATOR ── */
+    .sep {
+      height: 1px;
+      background: linear-gradient(90deg, var(--border), transparent);
+      margin: 2.5rem 0;
+    }
+
+    /* ── ADRESSES ── */
+    .parties {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .party {
+      padding: 1.25rem 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--light);
+    }
+    .party__label {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: .65rem;
+    }
+    .party__name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: .3rem;
+    }
+    .party p { font-size: .85rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── SECTION TITLES ── */
+    .s-label {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 1rem;
+    }
+    .s-label::before {
+      content: '';
+      width: 18px; height: 2px;
+      background: var(--grad);
+      border-radius: 2px;
+    }
+    .s-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -.01em;
+      margin-bottom: 1.25rem;
+    }
+    .section-intro {
+      font-size: .9rem;
+      color: var(--muted);
+      max-width: 680px;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+
+    /* ── OFFER CARDS ── */
+    .offers { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem; }
+
+    .offer-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: box-shadow .2s;
+    }
+    .offer-card--featured {
+      border-color: rgba(14,165,233,.35);
+      box-shadow: 0 0 0 3px rgba(14,165,233,.08);
+    }
+    .offer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 1.75rem;
+      background: var(--light);
+      border-bottom: 1px solid var(--border);
+    }
+    .offer-card--featured .offer-header {
+      background: linear-gradient(135deg, rgba(14,165,233,.06), rgba(99,102,241,.06));
+      border-color: rgba(14,165,233,.2);
+    }
+    .offer-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+    }
+    .offer-name .num {
+      width: 26px; height: 26px;
+      background: var(--grad);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .72rem;
+      font-weight: 700;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      flex-shrink: 0;
+    }
+    .offer-badge {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .25rem .75rem;
+      border-radius: 50px;
+      background: rgba(14,165,233,.1);
+      color: var(--blue);
+      border: 1px solid rgba(14,165,233,.2);
+    }
+    .offer-body { padding: 1.5rem 1.75rem; }
+
+    /* Items de prestation */
+    .items { display: flex; flex-direction: column; gap: .5rem; }
+    .item {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 1rem;
+      align-items: center;
+      padding: .7rem 1rem;
+      background: var(--light);
+      border-radius: 8px;
+      font-size: .85rem;
+    }
+    .item:nth-child(even) { background: white; border: 1px solid var(--border); }
+    .item__name { color: var(--dark); font-weight: 500; }
+    .item__detail { color: var(--muted); font-size: .78rem; text-align: center; }
+    .item__price {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      color: var(--dark);
+      text-align: right;
+      white-space: nowrap;
+    }
+    .item__price.free {
+      color: #10b981;
+      font-size: .8rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+    }
+    .item__price.included {
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ── TOTAL ── */
+    .offer-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.25rem;
+      padding: 1rem 1.25rem;
+      background: var(--dark);
+      border-radius: 10px;
+      color: white;
+    }
+    .offer-total .label { font-size: .82rem; color: rgba(255,255,255,.6); }
+    .offer-total .price {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+    }
+    .offer-total .price span {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .offer-total .freq { font-size: .75rem; color: rgba(255,255,255,.45); margin-top: .15rem; }
+
+    /* ── INCLUS ── */
+    .includes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .75rem;
+      margin-top: 1.5rem;
+    }
+    .incl {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .8rem;
+      color: var(--muted);
+      background: var(--light);
+      padding: .6rem .85rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .incl .check {
+      width: 18px; height: 18px;
+      background: rgba(16,185,129,.1);
+      border: 1px solid rgba(16,185,129,.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .6rem;
+      color: #10b981;
+      flex-shrink: 0;
+    }
+
+    /* ── VISIBILITE ── */
+    .visibility-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .vcard {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.35rem;
+      background: var(--light);
+      position: relative;
+      overflow: hidden;
+    }
+    .vcard--accent { background: linear-gradient(135deg, rgba(14,165,233,.04), rgba(99,102,241,.04)); border-color: rgba(14,165,233,.2); }
+    .vcard__icon { font-size: 1.5rem; margin-bottom: .75rem; }
+    .vcard__title { font-size: .9rem; font-weight: 700; color: var(--dark); margin-bottom: .4rem; }
+    .vcard__desc { font-size: .8rem; color: var(--muted); line-height: 1.6; }
+    .vcard__tag {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: .2rem .6rem;
+      border-radius: 50px;
+    }
+    .vcard__tag--free { background: rgba(16,185,129,.1); color: #10b981; border: 1px solid rgba(16,185,129,.2); }
+    .vcard__tag--paid { background: rgba(245,158,11,.1); color: #d97706; border: 1px solid rgba(245,158,11,.2); }
+
+    /* ── TIMELINE ── */
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .tline-item {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 1.5rem;
+      position: relative;
+    }
+    .tline-item:not(:last-child) .tline-content { padding-bottom: 1.75rem; }
+    .tline-item:not(:last-child) .tline-content::before {
+      content: '';
+      position: absolute;
+      left: 117px;
+      top: 32px;
+      bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
+    .tline-week {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--blue);
+      text-align: right;
+      padding-top: .5rem;
+    }
+    .tline-content {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .tline-content::after {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: .55rem;
+      width: 13px; height: 13px;
+      background: white;
+      border: 2px solid var(--blue);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(14,165,233,.1);
+    }
+    .tline-title { font-weight: 600; font-size: .9rem; color: var(--dark); margin-bottom: .35rem; }
+    .tline-desc { font-size: .82rem; color: var(--muted); line-height: 1.6; }
+    .tline-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .5rem; }
+    .tline-tag {
+      font-size: .68rem;
+      font-weight: 600;
+      padding: .18rem .65rem;
+      border-radius: 50px;
+      background: rgba(14,165,233,.08);
+      color: var(--blue);
+      border: 1px solid rgba(14,165,233,.15);
+    }
+
+    /* ── ROI TABLE ── */
+    .roi-table { width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; }
+    .roi-table th {
+      background: var(--dark);
+      color: rgba(255,255,255,.7);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .85rem 1.25rem;
+      text-align: left;
+    }
+    .roi-table th:last-child { text-align: right; }
+    .roi-table td {
+      padding: .85rem 1.25rem;
+      font-size: .85rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--dark);
+    }
+    .roi-table tr:last-child td { border-bottom: none; }
+    .roi-table tr:nth-child(even) td { background: var(--light); }
+    .roi-table .gain {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      color: #10b981;
+      text-align: right;
+    }
+    .roi-table tfoot td {
+      background: linear-gradient(135deg, rgba(14,165,233,.06), rgba(99,102,241,.06));
+      font-weight: 700;
+      color: var(--dark);
+      border-top: 2px solid rgba(14,165,233,.2);
+    }
+    .roi-table tfoot .gain {
+      font-size: 1.05rem;
+      color: #0ea5e9;
+    }
+
+    /* ── CONDITIONS ── */
+    .conditions {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .cond { font-size: .82rem; color: var(--muted); }
+    .cond strong { display: block; color: var(--dark); font-weight: 600; margin-bottom: .25rem; font-size: .85rem; }
+
+    /* ── SIGNATURE ── */
+    .sign-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .sign-box {
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 1.5rem 4rem;
+    }
+    .sign-box__label { font-size: .75rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: .35rem; }
+    .sign-box__name { font-size: .9rem; font-weight: 600; color: var(--dark); margin-bottom: .2rem; }
+    .sign-box__sub { font-size: .78rem; color: var(--muted); }
+
+    /* ── FOOTER ── */
+    .doc-footer {
+      background: var(--dark);
+      padding: 1.5rem 3.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .doc-footer p { font-size: .75rem; color: rgba(255,255,255,.35); }
+    .doc-footer strong { color: rgba(255,255,255,.65); }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight {
+      background: linear-gradient(135deg, rgba(14,165,233,.07), rgba(99,102,241,.07));
+      border: 1px solid rgba(14,165,233,.2);
+      border-radius: 14px;
+      padding: 1.35rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .highlight__icon { font-size: 1.3rem; flex-shrink: 0; }
+    .highlight__title { font-weight: 600; color: var(--dark); font-size: .9rem; margin-bottom: .25rem; }
+    .highlight__text { font-size: .82rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: white; }
+      .page { margin: 0; border-radius: 0; box-shadow: none; }
+      .no-print { display: none; }
+      @page { margin: 0; size: A4; }
+    }
+
+    /* ── PRINT BUTTON ── */
+    .print-btn {
+      display: block;
+      width: fit-content;
+      margin: 1.5rem auto;
+      padding: .75rem 2rem;
+      background: var(--dark);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-size: .875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity .2s;
+    }
+    .print-btn:hover { opacity: .85; }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn no-print" onclick="window.print()">
+    ⬇ Exporter en PDF / Imprimer
+  </button>
+
+  <div class="page">
+
+    <!-- ═══════ HEADER ═══════ -->
+    <div class="doc-header">
+      <div class="header-top">
+        <div class="header-logo">
+          ✦ <span>Votre agence / nom</span>
+          <!-- MODIFIER : votre nom ou logo -->
+        </div>
+        <div class="header-meta">
+          <strong>Proposition commerciale</strong>
+          Réf. EYT-2026-001<br />
+          Émise le 21 avril 2026<br />
+          Valable 30 jours
+        </div>
+      </div>
+      <div class="doc-tag">Proposition commerciale</div>
+      <h1 class="doc-title">
+        Visibilité digitale &<br />
+        <em>Développement en ligne</em>
+      </h1>
+      <p class="doc-subtitle">Préparée exclusivement pour EnjoyYourTime</p>
+    </div>
+
+    <!-- ═══════ BODY ═══════ -->
+    <div class="doc-body">
+
+      <!-- Parties -->
+      <div class="parties">
+        <div class="party">
+          <div class="party__label">Prestataire</div>
+          <div class="party__name"><!-- VOTRE NOM -->[Votre Prénom Nom]</div>
+          <p>
+            Freelance / Agence web<br />
+            <!-- VOTRE EMAIL -->votre@email.fr<br />
+            <!-- VOTRE TEL -->06 00 00 00 00<br />
+            SIRET : XX XXX XXX XXXXX
+          </p>
+        </div>
+        <div class="party">
+          <div class="party__label">Client</div>
+          <div class="party__name">EnjoyYourTime</div>
+          <p>
+            Entreprise de nettoyage professionnel<br />
+            Fin de chantier · Base de vie · Airbnb<br />
+            <!-- MODIFIER : ville du client -->
+            [Ville du client], France<br />
+            SIRET : [À compléter]
+          </p>
+        </div>
+      </div>
+
+      <div class="sep"></div>
+
+      <!-- ─── CONTEXTE ─── -->
+      <div class="s-label">Contexte</div>
+      <h2 class="s-title">Votre situation actuelle</h2>
+      <p class="section-intro">
+        EnjoyYourTime est une entreprise de nettoyage professionnel en pleine croissance, spécialisée dans le nettoyage de 
+        <strong>fin de chantier, base de vie</strong> et <strong>locations Airbnb</strong>. 
+        À ce jour, la visibilité digitale de l'entreprise est à construire : absence de site internet, pas d'email professionnel, 
+        aucune présence sur Google. L'objectif de cette proposition est de vous donner tous les outils pour <strong>être trouvé par vos futurs clients dès les premières semaines</strong>.
+      </p>
+
+      <div class="highlight">
+        <div class="highlight__icon">💡</div>
+        <div>
+          <div class="highlight__title">Pourquoi c'est urgent ?</div>
+          <div class="highlight__text">
+            87% des artisans et PME qui n'ont pas de présence digitale perdent des clients au profit de concurrents mieux référencés en ligne. 
+            Un site professionnel + Google Business + un email pro = <strong>votre carte de visite digitale visible 24/7</strong>, même quand vous êtes sur chantier.
+          </div>
+        </div>
+      </div>
+
+      <div class="sep"></div>
+
+      <!-- ─── OFFRES ─── -->
+      <div class="s-label">Nos Offres</div>
+      <h2 class="s-title">Deux formules, un objectif</h2>
+      <p class="section-intro">
+        J'ai préparé deux formules adaptées à votre budget et vos ambitions. La Formule Starter vous permet d'être opérationnel rapidement. 
+        La Formule Pro maximise votre visibilité et votre acquisition client dès le premier mois.
+      </p>
+
+      <div class="offers">
+
+        <!-- OFFRE 1 -->
+        <div class="offer-card">
+          <div class="offer-header">
+            <div class="offer-name">
+              <span class="num">1</span>
+              Formule Starter — Présence essentielle
+            </div>
+            <div class="offer-badge">Idéal pour démarrer</div>
+          </div>
+          <div class="offer-body">
+            <div class="items">
+              <div class="item">
+                <span class="item__name">🌐 Site internet professionnel (V1)</span>
+                <span class="item__detail">Design sobre, 100% responsive</span>
+                <span class="item__price"><!-- MODIFIER -->490 €</span>
+              </div>
+              <div class="item">
+                <span class="item__name">✉️ Email professionnel</span>
+                <span class="item__detail">contact@enjoyyourtime.fr</span>
+                <span class="item__price"><!-- MODIFIER -->30 €/an</span>
+              </div>
+              <div class="item">
+                <span class="item__name">🌍 Nom de domaine</span>
+                <span class="item__detail">enjoyyourtime.fr (1 an)</span>
+                <span class="item__price"><!-- MODIFIER -->15 €/an</span>
+              </div>
+              <div class="item">
+                <span class="item__name">🚀 Mise en ligne & hébergement</span>
+                <span class="item__detail">Netlify (infrastructure pro)</span>
+                <span class="item__price free">Gratuit</span>
+              </div>
+              <div class="item">
+                <span class="item__name">📍 Création fiche Google Business</span>
+                <span class="item__detail">Apparaître sur Google Maps</span>
+                <span class="item__price free">Inclus</span>
+              </div>
+              <div class="item">
+                <span class="item__name">📱 Formulaire de devis en ligne</span>
+                <span class="item__detail">Réception directe par email</span>
+                <span class="item__price included">Inclus</span>
+              </div>
+              <div class="item">
+                <span class="item__name">🔧 Formation utilisation (1h)</span>
+                <span class="item__detail">Modifier textes & photos seul</span>
+                <span class="item__price included">Inclus</span>
+              </div>
+            </div>
+            <div class="offer-total">
+              <div>
+                <div class="label">Total Formule Starter</div>
+                <div class="freq">Paiement unique + abonnement annuel 45 €</div>
+              </div>
+              <!-- MODIFIER : votre prix -->
+              <div class="price"><span>535 €</span> HT</div>
+            </div>
+            <div class="includes">
+              <div class="incl"><span class="check">✓</span> Livraison sous 7 jours</div>
+              <div class="incl"><span class="check">✓</span> 1 mois de support inclus</div>
+              <div class="incl"><span class="check">✓</span> Modifications illimitées J1</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OFFRE 2 -->
+        <div class="offer-card offer-card--featured">
+          <div class="offer-header">
+            <div class="offer-name">
+              <span class="num">2</span>
+              Formule Pro — Visibilité maximale ⭐ Recommandé
+            </div>
+            <div class="offer-badge">Meilleur rapport qualité/prix</div>
+          </div>
+          <div class="offer-body">
+            <div class="items">
+              <div class="item">
+                <span class="item__name">🌐 Site internet Premium (V2)</span>
+                <span class="item__detail">Animations, effets visuels, design haut de gamme</span>
+                <span class="item__price"><!-- MODIFIER -->890 €</span>
+              </div>
+              <div class="item">
+                <span class="item__name">✉️ Email professionnel (5 boîtes)</span>
+                <span class="item__detail">contact@, devis@, info@…</span>
+                <span class="item__price"><!-- MODIFIER -->3 €/mois</span>
+              </div>
+              <div class="item">
+                <span class="item__name">🌍 Nom de domaine .fr + .com</span>
+                <span class="item__detail">enjoyyourtime.fr & .com</span>
+                <span class="item__price"><!-- MODIFIER -->30 €/an</span>
+              </div>
+              <div class="item">
+                <span class="item__name">🚀 Hébergement pro (Netlify)</span>
+                <span class="item__detail">HTTPS, CDN mondial, 99.9% uptime</span>
+                <span class="item__price free">Gratuit</span>
+              </div>
+              <div class="item">
+                <span class="item__name">📍 Google Business Profile optimisé</span>
+                <span class="item__detail">Photos, services, zone couverte, posts</span>
+                <span class="item__price included">Inclus</span>
+              </div>
+              <div class="item">
+                <span class="item__name">🔍 SEO de base (référencement)</span>
+                <span class="item__detail">Balises, mots-clés, sitemap, vitesse</span>
+                <span class="item__price included">Inclus</span>
+              </div>
+              <div class="item">
+                <span class="item__name">📋 Panneau d'administration</span>
+                <span class="item__detail">Modifier le site sans coder</span>
+                <span class="item__price included">Inclus</span>
+              </div>
+              <div class="item">
+                <span class="item__name">📣 Kit réseaux sociaux</span>
+                <span class="item__detail">Templates Instagram + conseils publication</span>
+                <span class="item__price"><!-- MODIFIER -->150 €</span>
+              </div>
+              <div class="item">
+                <span class="item__name">📊 Rapport de visibilité (3 mois)</span>
+                <span class="item__detail">Visites, clics, appels generés</span>
+                <span class="item__price"><!-- MODIFIER -->90 €</span>
+              </div>
+              <div class="item">
+                <span class="item__name">🎓 Formation complète (2h)</span>
+                <span class="item__detail">Site + Google Business + réseaux</span>
+                <span class="item__price included">Inclus</span>
+              </div>
+            </div>
+            <div class="offer-total">
+              <div>
+                <div class="label">Total Formule Pro</div>
+                <div class="freq">Paiement en 2× possible · puis ~36 €/mois</div>
+              </div>
+              <!-- MODIFIER : votre prix -->
+              <div class="price"><span>1 160 €</span> HT</div>
+            </div>
+            <div class="includes">
+              <div class="incl"><span class="check">✓</span> Livraison sous 14 jours</div>
+              <div class="incl"><span class="check">✓</span> 3 mois de support</div>
+              <div class="incl"><span class="check">✓</span> Garantie satisfaction</div>
+              <div class="incl"><span class="check">✓</span> Paiement en 2 fois</div>
+              <div class="incl"><span class="check">✓</span> Rapport mensuel</div>
+              <div class="incl"><span class="check">✓</span> Évolutions incluses</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="sep"></div>
+
+      <!-- ─── VISIBILITÉ ─── -->
+      <div class="s-label">Stratégie de visibilité</div>
+      <h2 class="s-title">Ce qui génère des clients</h2>
+      <p class="section-intro">
+        Au-delà du site internet, voici les 6 leviers concrets que nous activons pour que vos futurs clients vous trouvent.
+      </p>
+
+      <div class="visibility-grid">
+        <div class="vcard vcard--accent">
+          <span class="vcard__tag vcard__tag--free">Gratuit</span>
+          <div class="vcard__icon">📍</div>
+          <div class="vcard__title">Google Business Profile</div>
+          <div class="vcard__desc">Votre fiche apparaît sur Google Maps quand on cherche "nettoyage chantier [votre ville]". C'est le levier n°1 pour les artisans locaux.</div>
+        </div>
+        <div class="vcard">
+          <span class="vcard__tag vcard__tag--free">Gratuit</span>
+          <div class="vcard__icon">🌐</div>
+          <div class="vcard__title">Site internet SEO-optimisé</div>
+          <div class="vcard__desc">Un site bien structuré remonte dans Google pour des recherches comme "nettoyage fin de chantier + ville". Résultats en 2–3 mois.</div>
+        </div>
+        <div class="vcard vcard--accent">
+          <span class="vcard__tag vcard__tag--free">Gratuit</span>
+          <div class="vcard__icon">✉️</div>
+          <div class="vcard__title">Email professionnel</div>
+          <div class="vcard__desc">Un email @enjoyyourtime.fr inspire confiance face à un gmail. Indispensable pour prospecter des entreprises BTP et promoteurs.</div>
+        </div>
+        <div class="vcard">
+          <span class="vcard__tag vcard__tag--free">Gratuit</span>
+          <div class="vcard__icon">📱</div>
+          <div class="vcard__title">Instagram Before/After</div>
+          <div class="vcard__desc">Les photos avant/après de chantiers sont du contenu très viral. 3 publications par semaine suffisent pour générer des demandes locales.</div>
+        </div>
+        <div class="vcard vcard--accent">
+          <span class="vcard__tag vcard__tag--paid">~15€/mois</span>
+          <div class="vcard__icon">🏆</div>
+          <div class="vcard__title">Habitissimo / Bark.com</div>
+          <div class="vcard__desc">Plateformes de mise en relation artisan/client. Des demandes de devis arrivent directement. Idéal en complément du site.</div>
+        </div>
+        <div class="vcard">
+          <span class="vcard__tag vcard__tag--paid">~300€/mois</span>
+          <div class="vcard__icon">🎯</div>
+          <div class="vcard__title">Google Ads (optionnel)</div>
+          <div class="vcard__desc">Pour apparaître tout en haut de Google immédiatement. Recommandé une fois les fondations en place. ROI moyen : 5x pour les artisans locaux.</div>
+        </div>
+      </div>
+
+      <div class="sep"></div>
+
+      <!-- ─── PLANNING ─── -->
+      <div class="s-label">Planning de déploiement</div>
+      <h2 class="s-title">De 0 à visible en 4 semaines</h2>
+
+      <div class="timeline">
+        <div class="tline-item">
+          <div class="tline-week">Sem. 1</div>
+          <div class="tline-content">
+            <div class="tline-title">Fondations digitales</div>
+            <div class="tline-desc">Enregistrement du nom de domaine, création de l'email professionnel, mise en ligne du site internet et connexion du formulaire de devis.</div>
+            <div class="tline-tags">
+              <span class="tline-tag">Domaine</span>
+              <span class="tline-tag">Email pro</span>
+              <span class="tline-tag">Site en ligne</span>
+            </div>
+          </div>
+        </div>
+        <div class="tline-item">
+          <div class="tline-week">Sem. 2</div>
+          <div class="tline-content">
+            <div class="tline-title">Présence locale Google</div>
+            <div class="tline-desc">Création et optimisation complète de la fiche Google Business : photos, description, services, zone géographique, premiers posts.</div>
+            <div class="tline-tags">
+              <span class="tline-tag">Google Maps</span>
+              <span class="tline-tag">Google Business</span>
+              <span class="tline-tag">Photos pro</span>
+            </div>
+          </div>
+        </div>
+        <div class="tline-item">
+          <div class="tline-week">Sem. 3</div>
+          <div class="tline-content">
+            <div class="tline-title">Réseaux sociaux & plateformes</div>
+            <div class="tline-desc">Création du compte Instagram pro, premiers before/after, inscription sur Habitissimo et Bark. Demande des premiers avis Google aux clients existants.</div>
+            <div class="tline-tags">
+              <span class="tline-tag">Instagram</span>
+              <span class="tline-tag">Habitissimo</span>
+              <span class="tline-tag">Avis Google</span>
+            </div>
+          </div>
+        </div>
+        <div class="tline-item">
+          <div class="tline-week">Sem. 4</div>
+          <div class="tline-content">
+            <div class="tline-title">Formation & autonomie</div>
+            <div class="tline-desc">Session de formation : comment modifier le site, publier sur Instagram, répondre aux avis Google, et suivre les statistiques. Rapport de départ.</div>
+            <div class="tline-tags">
+              <span class="tline-tag">Formation 2h</span>
+              <span class="tline-tag">Rapport initial</span>
+              <span class="tline-tag">Autonomie totale</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sep"></div>
+
+      <!-- ─── ROI ─── -->
+      <div class="s-label">Retour sur investissement</div>
+      <h2 class="s-title">Ce que ça peut rapporter</h2>
+      <p class="section-intro">
+        Estimation basée sur des prestataires de nettoyage similaires ayant activé ces leviers dans leur première année.
+      </p>
+
+      <table class="roi-table">
+        <thead>
+          <tr>
+            <th>Levier activé</th>
+            <th>Délai d'effet</th>
+            <th>Clients estimés/mois</th>
+            <th>CA supplémentaire</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Google Business + avis</strong></td>
+            <td>2–4 semaines</td>
+            <td>2–5 contacts</td>
+            <td class="gain">+800 – 2 000 €</td>
+          </tr>
+          <tr>
+            <td><strong>Site internet (SEO)</strong></td>
+            <td>2–3 mois</td>
+            <td>3–8 contacts</td>
+            <td class="gain">+1 500 – 4 000 €</td>
+          </tr>
+          <tr>
+            <td><strong>Instagram before/after</strong></td>
+            <td>1–2 mois</td>
+            <td>1–4 contacts</td>
+            <td class="gain">+500 – 2 000 €</td>
+          </tr>
+          <tr>
+            <td><strong>Habitissimo / Bark</strong></td>
+            <td>Immédiat</td>
+            <td>2–6 contacts</td>
+            <td class="gain">+800 – 2 500 €</td>
+          </tr>
+          <tr>
+            <td><strong>Email pro (prospection BTP)</strong></td>
+            <td>3–6 semaines</td>
+            <td>1–3 contrats</td>
+            <td class="gain">+1 000 – 5 000 €</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3"><strong>Potentiel total dès le 3e mois</strong></td>
+            <td class="gain">+4 600 – 15 500 €/mois</td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <div class="sep"></div>
+
+      <!-- ─── CONDITIONS ─── -->
+      <div class="s-label">Conditions commerciales</div>
+      <h2 class="s-title">Simple et transparent</h2>
+
+      <div class="conditions">
+        <div class="cond">
+          <strong>💳 Modalités de paiement</strong>
+          50% à la commande, 50% à la livraison.<br />
+          Paiement par virement bancaire ou PayPal.
+        </div>
+        <div class="cond">
+          <strong>📅 Validité de l'offre</strong>
+          Cette proposition est valable 30 jours à compter de la date d'émission, soit jusqu'au 21 mai 2026.
+        </div>
+        <div class="cond">
+          <strong>🔄 Révisions & modifications</strong>
+          2 allers-retours de corrections inclus. Modifications supplémentaires : 60 €/h.
+        </div>
+        <div class="cond">
+          <strong>🛡️ Garantie satisfaction</strong>
+          Si le rendu ne corresponds pas au brief validé, nous retravaillons sans frais supplémentaires.
+        </div>
+        <div class="cond">
+          <strong>📞 Support après livraison</strong>
+          Starter : 1 mois · Pro : 3 mois par email et téléphone, réponse sous 24h ouvrables.
+        </div>
+        <div class="cond">
+          <strong>📦 Livrables fournis</strong>
+          Codes sources, accès hébergement, accès domaine — vous êtes propriétaire de tout.
+        </div>
+      </div>
+
+      <div class="sep"></div>
+
+      <!-- ─── SIGNATURE ─── -->
+      <div class="s-label">Bon pour accord</div>
+      <h2 class="s-title">Pour valider cette proposition</h2>
+      <p class="section-intro" style="margin-bottom:0">
+        Il vous suffit de signer ci-dessous, de nous retourner ce document par email, et de régler l'acompte de 50% pour que nous démarrions dans les meilleurs délais.
+      </p>
+
+      <div class="sign-block">
+        <div class="sign-box">
+          <div class="sign-box__label">Le prestataire</div>
+          <div class="sign-box__name"><!-- VOTRE NOM -->[Votre Nom]</div>
+          <div class="sign-box__sub">Signature + date</div>
+        </div>
+        <div class="sign-box">
+          <div class="sign-box__label">Le client — EnjoyYourTime</div>
+          <div class="sign-box__name">Précédé de "Bon pour accord"</div>
+          <div class="sign-box__sub">Signature + date + cachet</div>
+        </div>
+      </div>
+
+    </div><!-- /doc-body -->
+
+    <!-- ═══════ FOOTER ═══════ -->
+    <div class="doc-footer">
+      <p>EnjoyYourTime · Proposition commerciale · Réf. EYT-2026-001</p>
+      <p>Questions ? <strong><!-- VOTRE CONTACT -->votre@email.fr · 06 00 00 00 00</strong></p>
+    </div>
+
+  </div><!-- /page -->
+
+  <button class="print-btn no-print" onclick="window.print()">
+    ⬇ Exporter en PDF / Imprimer
+  </button>
+
+</body>
+</html>

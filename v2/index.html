@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EnjoyYourTime — Experts en nettoyage fin de chantier, base de vie et locations Airbnb. Intervention rapide, résultat impeccable." />
+  <title>EnjoyYourTime — Nettoyage d'Exception</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body class="loading">
+
+  <!-- ═══════════════════════════════════════
+       LOADER
+  ═══════════════════════════════════════ -->
+  <div class="loader" id="loader">
+    <div class="loader__inner">
+      <svg class="loader__logo" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="30" cy="30" r="28" stroke="url(#lg1)" stroke-width="2"/>
+        <path d="M20 30 Q30 15 40 30 Q30 45 20 30Z" fill="url(#lg1)"/>
+        <defs>
+          <linearGradient id="lg1" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#38bdf8"/>
+            <stop offset="100%" stop-color="#818cf8"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="loader__bar"><div class="loader__fill"></div></div>
+      <span class="loader__text">EnjoyYourTime</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       CURSEUR CUSTOM
+  ═══════════════════════════════════════ -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo" data-cursor="logo">
+        <svg class="logo-svg" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="15" stroke="url(#logoGrad)" stroke-width="1.5"/>
+          <path d="M10 16 Q16 8 22 16 Q16 24 10 16Z" fill="url(#logoGrad)"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32">
+              <stop offset="0%" stop-color="#38bdf8"/>
+              <stop offset="100%" stop-color="#818cf8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>EnjoyYourTime</span>
+      </a>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#services" class="nav__link" data-cursor="link">Services</a></li>
+        <li><a href="#about" class="nav__link" data-cursor="link">À propos</a></li>
+        <li><a href="#process" class="nav__link" data-cursor="link">Notre méthode</a></li>
+        <li><a href="#reviews" class="nav__link" data-cursor="link">Avis</a></li>
+        <li><a href="#contact" class="btn-nav magnetic" data-cursor="btn">Devis gratuit</a></li>
+      </ul>
+
+      <button class="nav__burger" id="burger" aria-label="Menu" data-cursor="btn">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <!-- Mesh gradient animé -->
+    <div class="hero__mesh">
+      <div class="mesh__orb mesh__orb--1"></div>
+      <div class="mesh__orb mesh__orb--2"></div>
+      <div class="mesh__orb mesh__orb--3"></div>
+    </div>
+
+    <!-- Particules SVG -->
+    <canvas class="hero__canvas" id="particleCanvas"></canvas>
+
+    <!-- Grille de fond -->
+    <div class="hero__grid"></div>
+
+    <div class="container hero__content">
+      <div class="hero__eyebrow reveal-up">
+        <span class="eyebrow__dot"></span>
+        Nettoyage Professionnel · France
+      </div>
+
+      <h1 class="hero__title">
+        <span class="title__line reveal-clip" style="--delay:.1s">Propre.</span>
+        <span class="title__line reveal-clip" style="--delay:.25s">Rapide.</span>
+        <span class="title__line title__line--gradient reveal-clip" style="--delay:.4s">Impeccable.</span>
+      </h1>
+
+      <p class="hero__desc reveal-up" style="--delay:.55s">
+        Spécialistes du nettoyage <strong>fin de chantier</strong>, 
+        <strong>base de vie</strong> et <strong>locations Airbnb</strong>.<br />
+        Une prestation haut de gamme, livrée dans les délais.
+      </p>
+
+      <div class="hero__cta reveal-up" style="--delay:.7s">
+        <a href="#contact" class="btn-primary magnetic" data-cursor="btn">
+          <span class="btn-primary__text">Demander un devis</span>
+          <span class="btn-primary__icon">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </span>
+          <span class="btn-primary__bg"></span>
+        </a>
+        <a href="#services" class="btn-ghost" data-cursor="link">
+          Découvrir nos services
+        </a>
+      </div>
+
+      <!-- Statistiques flottantes -->
+      <div class="hero__stats reveal-up" style="--delay:.85s">
+        <div class="hstat">
+          <span class="hstat__num" data-count="500">0</span><span class="hstat__suffix">+</span>
+          <span class="hstat__label">Chantiers réalisés</span>
+        </div>
+        <div class="hstat__sep"></div>
+        <div class="hstat">
+          <span class="hstat__num" data-count="100">0</span><span class="hstat__suffix">%</span>
+          <span class="hstat__label">Clients satisfaits</span>
+        </div>
+        <div class="hstat__sep"></div>
+        <div class="hstat">
+          <span class="hstat__num" data-count="48">0</span><span class="hstat__suffix">h</span>
+          <span class="hstat__label">Délai d'intervention</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-hint">
+      <div class="scroll-hint__mouse"></div>
+      <span>Défiler</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       RUBAN DÉFILANT
+  ═══════════════════════════════════════ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>Fin de chantier</span><span class="ticker__dot">✦</span>
+      <span>Base de vie</span><span class="ticker__dot">✦</span>
+      <span>Airbnb & RBNB</span><span class="ticker__dot">✦</span>
+      <span>Nettoyage professionnel</span><span class="ticker__dot">✦</span>
+      <span>Intervention rapide</span><span class="ticker__dot">✦</span>
+      <span>Devis gratuit</span><span class="ticker__dot">✦</span>
+      <span>Fin de chantier</span><span class="ticker__dot">✦</span>
+      <span>Base de vie</span><span class="ticker__dot">✦</span>
+      <span>Airbnb & RBNB</span><span class="ticker__dot">✦</span>
+      <span>Nettoyage professionnel</span><span class="ticker__dot">✦</span>
+      <span>Intervention rapide</span><span class="ticker__dot">✦</span>
+      <span>Devis gratuit</span><span class="ticker__dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SERVICES
+  ═══════════════════════════════════════ -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__tag reveal-up">Nos Expertises</div>
+        <h2 class="section-head__title reveal-up" style="--delay:.1s">
+          Ce que nous<br /><em>faisons parfaitement</em>
+        </h2>
+      </div>
+
+      <div class="services__wrap">
+
+        <!-- Card 1 -->
+        <article class="scard reveal-side" style="--delay:.05s">
+          <div class="scard__num">01</div>
+          <div class="scard__icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect width="48" height="48" rx="14" fill="url(#si1)"/>
+              <path d="M12 34V20l12-8 12 8v14H28v-8h-8v8z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/>
+              <defs><linearGradient id="si1" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#0ea5e9"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs>
+            </svg>
+          </div>
+          <div class="scard__body">
+            <div class="scard__tag">Chantier BTP</div>
+            <h3 class="scard__title">Nettoyage Fin de Chantier</h3>
+            <p class="scard__desc">Nous transformons vos chantiers en espaces livrables clés en main : chaque poussière, chaque résidu, chaque vitre — pris en charge.</p>
+            <ul class="scard__list">
+              <li>Dépoussiérage complet & évacuation</li>
+              <li>Nettoyage vitres & menuiseries</li>
+              <li>Décapage & protection des sols</li>
+              <li>Désinfection sanitaires</li>
+            </ul>
+          </div>
+          <a href="#contact" class="scard__cta" data-cursor="link">Obtenir un devis <span>→</span></a>
+          <div class="scard__glow"></div>
+        </article>
+
+        <!-- Card 2 — Featured -->
+        <article class="scard scard--dark reveal-side" style="--delay:.15s">
+          <div class="scard__num">02</div>
+          <div class="scard__icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect width="48" height="48" rx="14" fill="rgba(255,255,255,.1)"/>
+              <rect x="8" y="14" width="32" height="22" rx="4" stroke="#38bdf8" stroke-width="1.8"/>
+              <path d="M16 22h8M16 26h16" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M24 36v4M18 40h12" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="scard__featured-badge">⭐ Service phare</div>
+          <div class="scard__body">
+            <div class="scard__tag">BTP · Récurrent</div>
+            <h3 class="scard__title">Nettoyage Base de Vie</h3>
+            <p class="scard__desc">Vos équipes méritent un espace de vie propre. Entretien régulier ou ponctuel adapté aux rythmes de votre chantier.</p>
+            <ul class="scard__list">
+              <li>Réfectoires & cuisines</li>
+              <li>Vestiaires & douches</li>
+              <li>WC mobiles & sanitaires</li>
+              <li>Planning adapté à vos équipes</li>
+            </ul>
+          </div>
+          <a href="#contact" class="scard__cta" data-cursor="link">Obtenir un devis <span>→</span></a>
+          <div class="scard__particles"></div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="scard reveal-side" style="--delay:.25s">
+          <div class="scard__num">03</div>
+          <div class="scard__icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect width="48" height="48" rx="14" fill="url(#si3)"/>
+              <path d="M14 20c0-5.523 4.477-10 10-10s10 4.477 10 10c0 8-10 18-10 18S14 28 14 20z" stroke="white" stroke-width="1.8"/>
+              <circle cx="24" cy="20" r="3" fill="white"/>
+              <defs><linearGradient id="si3" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#06b6d4"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient></defs>
+            </svg>
+          </div>
+          <div class="scard__body">
+            <div class="scard__tag">Location Courte Durée</div>
+            <h3 class="scard__title">Nettoyage Airbnb & RBNB</h3>
+            <p class="scard__desc">Entre deux voyageurs, nous passons rapidement pour garantir des avis 5 étoiles à votre logement. Disponible 7j/7.</p>
+            <ul class="scard__list">
+              <li>Nettoyage complet entre séjours</li>
+              <li>Linge de lit & serviettes changés</li>
+              <li>Réapprovisionnement produits</li>
+              <li>Rapport photo après chaque passage</li>
+            </ul>
+          </div>
+          <a href="#contact" class="scard__cta" data-cursor="link">Obtenir un devis <span>→</span></a>
+          <div class="scard__glow"></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       À PROPOS — Split layout cinématique
+  ═══════════════════════════════════════ -->
+  <section class="about section" id="about">
+    <div class="about__bg-strip"></div>
+    <div class="container about__grid">
+
+      <div class="about__visual">
+        <div class="about__img-frame reveal-side" style="--delay:.05s">
+          <div class="about__img-inner">
+            <!-- Remplacer le placeholder par <img src="../images/equipe.jpg" alt="Équipe EnjoyYourTime"> -->
+            <div class="about__placeholder">
+              <div class="placeholder__circle"></div>
+              <div class="placeholder__lines">
+                <div></div><div></div><div></div>
+              </div>
+            </div>
+          </div>
+          <div class="about__img-badge">
+            <span class="badge__num">5+</span>
+            <span class="badge__txt">ans d'expérience</span>
+          </div>
+          <div class="about__img-tag">📍 France</div>
+        </div>
+      </div>
+
+      <div class="about__content">
+        <div class="section-head__tag reveal-up">Qui Sommes-Nous</div>
+        <h2 class="about__title reveal-up" style="--delay:.1s">
+          Une passion pour<br /><span class="text-gradient">la propreté parfaite</span>
+        </h2>
+        <p class="about__text reveal-up" style="--delay:.2s">
+          EnjoyYourTime est née d'une conviction simple : <strong>un environnement propre change tout</strong>. Bâtiment livré, base de vie, ou logement de vacances — chaque espace mérite une attention professionnelle.
+        </p>
+        <p class="about__text reveal-up" style="--delay:.28s">
+          Nos équipes formées interviennent avec le matériel adapté, des produits certifiés et un engagement total sur le résultat. BTP, promoteurs, propriétaires Airbnb : nous avons l'habitude de tous les contextes.
+        </p>
+
+        <div class="about__pillars reveal-up" style="--delay:.36s">
+          <div class="pillar">
+            <div class="pillar__icon">⚡</div>
+            <div class="pillar__text">
+              <strong>Réactivité</strong>
+              <span>Réponse sous 2h, 7j/7</span>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar__icon">🛡️</div>
+            <div class="pillar__text">
+              <strong>Fiabilité</strong>
+              <span>Assurés, référencés, formés</span>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar__icon">🌿</div>
+            <div class="pillar__text">
+              <strong>Écologie</strong>
+              <span>Produits certifiés éco</span>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar__icon">📸</div>
+            <div class="pillar__text">
+              <strong>Transparence</strong>
+              <span>Photos avant/après</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PROCESSUS — Timeline horizontale
+  ═══════════════════════════════════════ -->
+  <section class="process section" id="process">
+    <div class="container">
+      <div class="section-head centered">
+        <div class="section-head__tag reveal-up">Notre Méthode</div>
+        <h2 class="section-head__title reveal-up" style="--delay:.1s">
+          Simple, rapide,<br /><em>sans surprise</em>
+        </h2>
+      </div>
+
+      <div class="process__steps">
+        <div class="pstep reveal-up" style="--delay:.05s">
+          <div class="pstep__num">01</div>
+          <div class="pstep__icon">📋</div>
+          <h3 class="pstep__title">Devis gratuit</h3>
+          <p class="pstep__desc">Contactez-nous, décrivez votre besoin. Nous répondons sous 24h avec une proposition détaillée.</p>
+          <div class="pstep__arrow">→</div>
+        </div>
+        <div class="pstep reveal-up" style="--delay:.15s">
+          <div class="pstep__num">02</div>
+          <div class="pstep__icon">📅</div>
+          <h3 class="pstep__title">Planification</h3>
+          <p class="pstep__desc">On s'adapte à vos contraintes de planning. Intervention dans les 48h si besoin urgent.</p>
+          <div class="pstep__arrow">→</div>
+        </div>
+        <div class="pstep reveal-up" style="--delay:.25s">
+          <div class="pstep__num">03</div>
+          <div class="pstep__icon">🧹</div>
+          <h3 class="pstep__title">Intervention</h3>
+          <p class="pstep__desc">Nos équipes équipées interviennent avec méthode. Chaque zone est contrôlée avant départ.</p>
+          <div class="pstep__arrow">→</div>
+        </div>
+        <div class="pstep reveal-up" style="--delay:.35s">
+          <div class="pstep__num">04</div>
+          <div class="pstep__icon">✅</div>
+          <h3 class="pstep__title">Validation</h3>
+          <p class="pstep__desc">Rapport photos, signature si besoin. Vous êtes satisfait ou nous revenons — garantie incluse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CHIFFRES — Section impact
+  ═══════════════════════════════════════ -->
+  <section class="numbers section">
+    <div class="numbers__bg">
+      <div class="numbers__orb numbers__orb--1"></div>
+      <div class="numbers__orb numbers__orb--2"></div>
+    </div>
+    <div class="container numbers__grid">
+      <div class="nstat reveal-up" style="--delay:.05s">
+        <div class="nstat__num"><span data-count="500" class="counter">0</span>+</div>
+        <div class="nstat__label">Chantiers livrés</div>
+      </div>
+      <div class="nstat reveal-up" style="--delay:.12s">
+        <div class="nstat__num"><span data-count="100" class="counter">0</span>%</div>
+        <div class="nstat__label">Satisfaction client</div>
+      </div>
+      <div class="nstat reveal-up" style="--delay:.2s">
+        <div class="nstat__num"><span data-count="48" class="counter">0</span>h</div>
+        <div class="nstat__label">Délai d'intervention max</div>
+      </div>
+      <div class="nstat reveal-up" style="--delay:.28s">
+        <div class="nstat__num"><span data-count="7" class="counter">0</span>j/7</div>
+        <div class="nstat__label">Jours disponibles</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       TÉMOIGNAGES
+  ═══════════════════════════════════════ -->
+  <section class="reviews section" id="reviews">
+    <div class="container">
+      <div class="section-head centered">
+        <div class="section-head__tag reveal-up">Témoignages</div>
+        <h2 class="section-head__title reveal-up" style="--delay:.1s">
+          Ils nous font <em>confiance</em>
+        </h2>
+      </div>
+
+      <div class="reviews__track" id="reviewsTrack">
+        <div class="rcard reveal-up" style="--delay:.05s">
+          <div class="rcard__quote">"</div>
+          <div class="rcard__stars">★★★★★</div>
+          <p class="rcard__text">Intervention impeccable après la livraison de notre immeuble. Équipe professionnelle, ponctuels et résultats au-delà de nos attentes. Je les recommande sans hésitation.</p>
+          <div class="rcard__author">
+            <div class="rcard__avatar" style="--hue:210">JD</div>
+            <div>
+              <strong>Jean-David M.</strong>
+              <span>Promoteur immobilier</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rcard reveal-up" style="--delay:.13s">
+          <div class="rcard__quote">"</div>
+          <div class="rcard__stars">★★★★★</div>
+          <p class="rcard__text">EnjoyYourTime intervient chaque semaine sur notre base de vie. Toujours fiables, toujours propres. Mes équipes sont ravies d'avoir un espace de qualité.</p>
+          <div class="rcard__author">
+            <div class="rcard__avatar" style="--hue:160">SC</div>
+            <div>
+              <strong>Sophie C.</strong>
+              <span>Conductrice de travaux</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rcard reveal-up" style="--delay:.21s">
+          <div class="rcard__quote">"</div>
+          <div class="rcard__stars">★★★★★</div>
+          <p class="rcard__text">En tant que propriétaire Airbnb avec 3 appartements, c'est un service indispensable. Rapides, soigneux, et mes notes sont passées à 4.9 étoiles !</p>
+          <div class="rcard__author">
+            <div class="rcard__avatar" style="--hue:280">AM</div>
+            <div>
+              <strong>Antoine M.</strong>
+              <span>Hôte Airbnb · 3 logements</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étoiles globales -->
+      <div class="reviews__global reveal-up" style="--delay:.3s">
+        <div class="rglobal__stars">★★★★★</div>
+        <div class="rglobal__score">4.9 / 5</div>
+        <div class="rglobal__count">Basé sur 120+ avis clients</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════ -->
+  <section class="contact section" id="contact">
+    <div class="container contact__wrap">
+
+      <div class="contact__left">
+        <div class="section-head__tag reveal-up">Contact</div>
+        <h2 class="contact__title reveal-up" style="--delay:.08s">
+          Parlons de<br /><span class="text-gradient">votre projet</span>
+        </h2>
+        <p class="contact__sub reveal-up" style="--delay:.16s">
+          Devis gratuit sous 24h. Nous nous déplaçons si besoin pour évaluer le chantier.
+        </p>
+
+        <div class="contact__infos reveal-up" style="--delay:.24s">
+          <a href="tel:+33600000000" class="cinfo magnetic" data-cursor="btn">
+            <div class="cinfo__icon">📞</div>
+            <div>
+              <strong>Téléphone</strong>
+              <span>06 00 00 00 00</span>
+            </div>
+          </a>
+          <a href="mailto:contact@enjoyyourtime.fr" class="cinfo magnetic" data-cursor="btn">
+            <div class="cinfo__icon">✉️</div>
+            <div>
+              <strong>Email</strong>
+              <span>contact@enjoyyourtime.fr</span>
+            </div>
+          </a>
+          <div class="cinfo">
+            <div class="cinfo__icon">🕐</div>
+            <div>
+              <strong>Disponibilités</strong>
+              <span>Lun–Sam 7h–20h · Dim sur demande</span>
+            </div>
+          </div>
+          <div class="cinfo">
+            <div class="cinfo__icon">📍</div>
+            <div>
+              <strong>Zone d'intervention</strong>
+              <span>Votre ville et alentours</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact__right reveal-side" style="--delay:.1s">
+        <form class="cform" id="contactForm"
+              action="https://formspree.io/f/VOTRE_ID_FORMSPREE"
+              method="POST" novalidate>
+
+          <div class="cform__row">
+            <div class="cform__field">
+              <input type="text" id="nom" name="nom" required placeholder=" " />
+              <label for="nom">Nom complet *</label>
+              <div class="cform__line"></div>
+            </div>
+            <div class="cform__field">
+              <input type="tel" id="tel" name="tel" required placeholder=" " />
+              <label for="tel">Téléphone *</label>
+              <div class="cform__line"></div>
+            </div>
+          </div>
+
+          <div class="cform__field">
+            <input type="email" id="email" name="email" required placeholder=" " />
+            <label for="email">Email *</label>
+            <div class="cform__line"></div>
+          </div>
+
+          <div class="cform__field cform__field--select">
+            <select id="service" name="service" required>
+              <option value="">— Sélectionner un service *</option>
+              <option value="chantier">Nettoyage fin de chantier</option>
+              <option value="base-vie">Nettoyage base de vie</option>
+              <option value="airbnb">Nettoyage Airbnb / RBNB</option>
+              <option value="autre">Autre demande</option>
+            </select>
+            <div class="cform__line"></div>
+          </div>
+
+          <div class="cform__field">
+            <textarea id="message" name="message" rows="4" placeholder=" "></textarea>
+            <label for="message">Décrivez votre besoin (surface, fréquence, date…)</label>
+            <div class="cform__line"></div>
+          </div>
+
+          <button type="submit" class="cform__btn magnetic" data-cursor="btn">
+            <span class="cform__btn-text">Envoyer ma demande</span>
+            <span class="cform__btn-icon">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+            <span class="cform__btn-bg"></span>
+          </button>
+
+          <div class="cform__success" id="formSuccess" hidden>
+            <span>✅</span> Votre demande a bien été envoyée ! Nous vous répondrons sous 24h.
+          </div>
+
+          <p class="cform__note">* Champs obligatoires · Données utilisées uniquement pour vous recontacter</p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <a href="#" class="footer__logo">
+            <svg class="logo-svg" viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="16" r="15" stroke="url(#fg)" stroke-width="1.5"/>
+              <path d="M10 16 Q16 8 22 16 Q16 24 10 16Z" fill="url(#fg)"/>
+              <defs>
+                <linearGradient id="fg" x1="0" y1="0" x2="32" y2="32">
+                  <stop offset="0%" stop-color="#38bdf8"/>
+                  <stop offset="100%" stop-color="#818cf8"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span>EnjoyYourTime</span>
+          </a>
+          <p>Votre partenaire nettoyage professionnel. Réactif, minutieux, fiable.</p>
+          <div class="footer__socials">
+            <a href="#" aria-label="Facebook" class="fsocial" data-cursor="btn">f</a>
+            <a href="#" aria-label="Instagram" class="fsocial" data-cursor="btn">in</a>
+            <a href="#" aria-label="LinkedIn" class="fsocial" data-cursor="btn">li</a>
+          </div>
+        </div>
+
+        <div class="footer__nav">
+          <strong>Navigation</strong>
+          <ul>
+            <li><a href="#services">Nos Services</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#process">Notre méthode</a></li>
+            <li><a href="#reviews">Témoignages</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__nav">
+          <strong>Services</strong>
+          <ul>
+            <li><a href="#services">Fin de chantier</a></li>
+            <li><a href="#services">Base de vie BTP</a></li>
+            <li><a href="#services">Airbnb & RBNB</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__contact-col">
+          <strong>Contact direct</strong>
+          <a href="tel:+33600000000" class="footer__phone">06 00 00 00 00</a>
+          <a href="mailto:contact@enjoyyourtime.fr">contact@enjoyyourtime.fr</a>
+          <span>📍 Votre ville, France</span>
+          <a href="#contact" class="btn-primary btn-primary--sm magnetic" data-cursor="btn">
+            <span class="btn-primary__text">Devis gratuit</span>
+            <span class="btn-primary__bg"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2026 EnjoyYourTime · Tous droits réservés</p>
+        <p>Site conçu avec soin · <a href="#">Mentions légales</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bouton retour en haut -->
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut" data-cursor="btn">
+    <svg viewBox="0 0 20 20" fill="none"><path d="M10 16V4M4 10l6-6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
