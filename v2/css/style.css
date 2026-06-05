@@ -731,17 +731,6 @@ strong { font-weight: 600; }
 
 .scard:hover .scard__glow { opacity: 1; }
 
-/* Card featured / dark */
-.scard--dark {
-  background: linear-gradient(160deg, #0f2444 0%, #0d1b35 100%);
-  border-color: rgba(56,189,248,.2);
-}
-
-.scard--dark:hover {
-  border-color: var(--c-blue);
-  box-shadow: 0 24px 60px rgba(0,0,0,.6), 0 0 40px rgba(56,189,248,.12);
-}
-
 .scard__particles {
   position: absolute;
   inset: 0;
