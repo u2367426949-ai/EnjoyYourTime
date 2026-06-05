@@ -28,7 +28,7 @@ collections:
         fields:
           - { label: "Nom de la société",    name: "nom",        widget: "string",    default: "EnjoyYourTime" }
           - { label: "Téléphone",            name: "telephone",  widget: "string",    default: "06 00 00 00 00" }
-          - { label: "Email",                name: "email",      widget: "string",    default: "contact@enjoyyourtime.fr" }
+          - { label: "Email",                name: "email",      widget: "string",    default: "enjoyyourtime76@gmail.com" }
           - { label: "Zone d'intervention",  name: "zone",       widget: "string",    default: "Votre ville et alentours" }
           - { label: "Accroche Hero",        name: "hero_titre", widget: "string",    default: "Un espace propre, une tranquillité d'esprit" }
           - { label: "Sous-titre Hero",      name: "hero_texte", widget: "text" }

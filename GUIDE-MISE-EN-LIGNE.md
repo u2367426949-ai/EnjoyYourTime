@@ -76,7 +76,7 @@ cleaning-website/
 ## Emails professionnels
 
 Recommandation : **Zoho Mail** (gratuit jusqu'à 5 comptes)
-- contact@enjoyyourtime.fr
+- enjoyyourtime76@gmail.com
 - devis@enjoyyourtime.fr
 
 Inscription : https://www.zoho.com/mail/
