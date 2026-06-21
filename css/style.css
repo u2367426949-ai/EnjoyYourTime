@@ -321,10 +321,90 @@ ul { list-style: none; }
   left: -100px;
 }
 
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--space-2xl);
+}
+
 .hero__content {
   position: relative;
   z-index: 1;
-  max-width: 780px;
+}
+
+.hero__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__animation {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+}
+
+/* Animations hero */
+.anim-house {
+  animation: floatSoft 4s ease-in-out infinite;
+}
+
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.anim-spray {
+  animation: sprayPump 3s ease-in-out infinite;
+  transform-origin: 355px 210px;
+}
+
+@keyframes sprayPump {
+  0%, 70%, 100% { transform: rotate(0deg); }
+  75% { transform: rotate(-8deg); }
+  80% { transform: rotate(0deg); }
+  85% { transform: rotate(-5deg); }
+  90% { transform: rotate(0deg); }
+}
+
+.anim-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.sparkle-1 { animation-delay: 0s; }
+.sparkle-2 { animation-delay: 0.7s; }
+.sparkle-3 { animation-delay: 1.4s; }
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.anim-bubble {
+  animation: bubbleUp 4s ease-in-out infinite;
+}
+
+.bubble-1 { animation-delay: 0s; }
+.bubble-2 { animation-delay: 0.8s; }
+.bubble-3 { animation-delay: 1.6s; }
+.bubble-4 { animation-delay: 2.4s; }
+.bubble-5 { animation-delay: 3.2s; }
+
+@keyframes bubbleUp {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { opacity: 0.9; }
+  100% { transform: translateY(-80px) scale(0.5); opacity: 0; }
+}
+
+.anim-check {
+  animation: popIn 3s ease-in-out infinite;
+}
+
+@keyframes popIn {
+  0%, 60%, 100% { transform: scale(1); opacity: 1; }
+  65% { transform: scale(1.15); }
+  70% { transform: scale(1); }
 }
 
 .hero__badge {
@@ -1063,6 +1143,10 @@ ul { list-style: none; }
 
 /* Tablette */
 @media (max-width: 1024px) {
+  .hero__animation {
+    max-width: 360px;
+  }
+
   .why__grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1078,6 +1162,14 @@ ul { list-style: none; }
     grid-template-columns: repeat(2, 1fr);
     max-width: 760px;
     margin: 0 auto;
+  }
+
+  .hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__visual {
+    display: none;
   }
 
   .about__grid {
