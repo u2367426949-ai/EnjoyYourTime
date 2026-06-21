@@ -184,24 +184,6 @@ ul { list-style: none; }
 .btn--full { width: 100%; justify-content: center; }
 
 /* ---------- HEADER / NAV ---------- */
-/* ---------- LOGO BANNER ---------- */
-.logo-banner {
-  background: linear-gradient(135deg, #f0f8f9 0%, #e4f3ef 100%);
-  text-align: center;
-  padding: var(--space-xl) 0;
-  border-bottom: 2px solid rgba(42,125,156,.1);
-}
-
-.logo-banner__img {
-  height: 120px;
-  width: auto;
-  transition: transform 0.3s ease;
-}
-
-.logo-banner__img:hover {
-  transform: scale(1.05);
-}
-
 .header {
   position: sticky;
   top: 0;
@@ -409,6 +391,19 @@ ul { list-style: none; }
   70% { transform: scale(1); }
 }
 
+.hero__logo-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  justify-content: center;
+  margin-bottom: var(--space-lg);
+}
+
+.hero__logo {
+  height: 100px;
+  width: auto;
+}
+
 .hero__badge {
   display: inline-flex;
   align-items: center;
@@ -420,7 +415,6 @@ ul { list-style: none; }
   padding: var(--space-xs) var(--space-md);
   border-radius: 50px;
   border: 1px solid rgba(42,125,156,.2);
-  margin-bottom: var(--space-lg);
 }
 
 .hero__badge::before {
