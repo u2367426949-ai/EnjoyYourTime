@@ -1048,6 +1048,10 @@ ul { list-style: none; }
   margin-bottom: var(--space-md);
 }
 
+.footer__brand .nav__logo-img {
+  filter: brightness(0) invert(1);
+}
+
 .footer__brand p {
   font-size: var(--text-sm);
   line-height: 1.7;
