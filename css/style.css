@@ -1049,7 +1049,7 @@ ul { list-style: none; }
 }
 
 .footer__brand .nav__logo-img {
-  mix-blend-mode: screen;
+  height: 70px;
 }
 
 .footer__brand p {
