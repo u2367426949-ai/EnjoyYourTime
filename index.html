@@ -69,82 +69,6 @@
         </div>
       </div>
 
-      <div class="hero__visual">
-        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" class="hero__animation">
-          <!-- Cercle de fond -->
-          <circle cx="250" cy="250" r="200" fill="rgba(42,125,156,0.06)" />
-          <circle cx="250" cy="250" r="150" fill="rgba(78,205,180,0.06)" />
-
-          <!-- Maison propre -->
-          <g class="anim-house">
-            <path d="M180 320 L180 230 L250 180 L320 230 L320 320 Z" fill="white" stroke="#2a7d9c" stroke-width="3" stroke-linejoin="round"/>
-            <rect x="225" y="260" width="50" height="60" rx="4" fill="#e0f4f0" stroke="#2a7d9c" stroke-width="2"/>
-            <circle cx="265" cy="292" r="4" fill="#2a7d9c"/>
-            <rect x="195" y="240" width="30" height="30" rx="3" fill="#e0f4f0" stroke="#2a7d9c" stroke-width="2"/>
-            <rect x="275" y="240" width="30" height="30" rx="3" fill="#e0f4f0" stroke="#2a7d9c" stroke-width="2"/>
-            <line x1="210" y1="240" x2="210" y2="270" stroke="#2a7d9c" stroke-width="1.5"/>
-            <line x1="195" y1="255" x2="225" y2="255" stroke="#2a7d9c" stroke-width="1.5"/>
-            <line x1="290" y1="240" x2="290" y2="270" stroke="#2a7d9c" stroke-width="1.5"/>
-            <line x1="275" y1="255" x2="305" y2="255" stroke="#2a7d9c" stroke-width="1.5"/>
-          </g>
-
-          <!-- Spray nettoyant -->
-          <g class="anim-spray">
-            <rect x="340" y="200" width="30" height="60" rx="6" fill="#4ecdb4"/>
-            <rect x="345" y="185" width="20" height="20" rx="3" fill="#2a7d9c"/>
-            <rect x="338" y="190" width="15" height="8" rx="2" fill="#2a7d9c"/>
-          </g>
-
-          <!-- Gouttelettes du spray -->
-          <g class="anim-drops">
-            <circle cx="325" cy="200" r="3" fill="#4ecdb4" opacity="0.8">
-              <animate attributeName="cx" values="325;300;280" dur="2s" repeatCount="indefinite"/>
-              <animate attributeName="cy" values="200;190;195" dur="2s" repeatCount="indefinite"/>
-              <animate attributeName="opacity" values="0.8;0.4;0" dur="2s" repeatCount="indefinite"/>
-              <animate attributeName="r" values="3;2;1" dur="2s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="328" cy="210" r="2.5" fill="#2a7d9c" opacity="0.6">
-              <animate attributeName="cx" values="328;305;285" dur="2.3s" repeatCount="indefinite"/>
-              <animate attributeName="cy" values="210;205;215" dur="2.3s" repeatCount="indefinite"/>
-              <animate attributeName="opacity" values="0.6;0.3;0" dur="2.3s" repeatCount="indefinite"/>
-              <animate attributeName="r" values="2.5;1.5;0.5" dur="2.3s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="330" cy="195" r="2" fill="#4ecdb4" opacity="0.7">
-              <animate attributeName="cx" values="330;310;290" dur="1.8s" repeatCount="indefinite"/>
-              <animate attributeName="cy" values="195;180;178" dur="1.8s" repeatCount="indefinite"/>
-              <animate attributeName="opacity" values="0.7;0.3;0" dur="1.8s" repeatCount="indefinite"/>
-              <animate attributeName="r" values="2;1.5;0.5" dur="1.8s" repeatCount="indefinite"/>
-            </circle>
-          </g>
-
-          <!-- Étoiles de propreté / brillance -->
-          <g class="anim-sparkle sparkle-1">
-            <line x1="160" y1="180" x2="160" y2="200" stroke="#4ecdb4" stroke-width="2" stroke-linecap="round"/>
-            <line x1="150" y1="190" x2="170" y2="190" stroke="#4ecdb4" stroke-width="2" stroke-linecap="round"/>
-          </g>
-          <g class="anim-sparkle sparkle-2">
-            <line x1="300" y1="160" x2="300" y2="175" stroke="#2a7d9c" stroke-width="2" stroke-linecap="round"/>
-            <line x1="292" y1="167" x2="308" y2="167" stroke="#2a7d9c" stroke-width="2" stroke-linecap="round"/>
-          </g>
-          <g class="anim-sparkle sparkle-3">
-            <line x1="200" y1="155" x2="200" y2="170" stroke="#4ecdb4" stroke-width="2" stroke-linecap="round"/>
-            <line x1="192" y1="162" x2="208" y2="162" stroke="#4ecdb4" stroke-width="2" stroke-linecap="round"/>
-          </g>
-
-          <!-- Bulles flottantes -->
-          <circle cx="150" cy="350" r="8" fill="none" stroke="#4ecdb4" stroke-width="1.5" class="anim-bubble bubble-1"/>
-          <circle cx="340" cy="370" r="6" fill="none" stroke="#2a7d9c" stroke-width="1.5" class="anim-bubble bubble-2"/>
-          <circle cx="180" cy="380" r="5" fill="none" stroke="#4ecdb4" stroke-width="1" class="anim-bubble bubble-3"/>
-          <circle cx="310" cy="350" r="10" fill="none" stroke="#2a7d9c" stroke-width="1.5" class="anim-bubble bubble-4"/>
-          <circle cx="220" cy="370" r="7" fill="none" stroke="#4ecdb4" stroke-width="1.2" class="anim-bubble bubble-5"/>
-
-          <!-- Checkmark de validation -->
-          <g class="anim-check">
-            <circle cx="370" cy="310" r="20" fill="#4ecdb4"/>
-            <path d="M358 310 L366 318 L382 302" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </g>
-        </svg>
-      </div>
     </div>
   </section>
 
@@ -186,10 +110,11 @@
         <div class="service-card" data-aos>
           <div class="service-card__icon">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="48" height="48" rx="14" fill="rgba(255,255,255,.1)"/>
-              <rect x="8" y="14" width="32" height="20" rx="4" stroke="#4ecdb4" stroke-width="1.8"/>
-              <path d="M16 22h8M16 27h16" stroke="#4ecdb4" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M24 34v4M18 38h12" stroke="#4ecdb4" stroke-width="1.8" stroke-linecap="round"/>
+              <rect width="48" height="48" rx="14" fill="url(#si2)"/>
+              <rect x="8" y="14" width="32" height="20" rx="4" stroke="white" stroke-width="1.8"/>
+              <path d="M16 22h8M16 27h16" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M24 34v4M18 38h12" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+              <defs><linearGradient id="si2" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#2a7d9c"/><stop offset="1" stop-color="#4ecdb4"/></linearGradient></defs>
             </svg>
           </div>
           <div class="service-card__tag">Base de Vie</div>
