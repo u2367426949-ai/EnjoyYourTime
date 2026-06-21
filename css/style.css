@@ -985,13 +985,12 @@ ul { list-style: none; }
 
 .form__checkbox {
   flex-direction: row;
-  align-items: flex-start;
-  gap: var(--space-sm);
+  align-items: center;
 }
 
 .form__checkbox label {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--space-sm);
   font-size: 0.8rem;
   font-weight: 400;
@@ -1004,7 +1003,7 @@ ul { list-style: none; }
   width: 18px;
   height: 18px;
   min-width: 18px;
-  margin-top: 2px;
+  flex-shrink: 0;
   accent-color: var(--color-primary);
   cursor: pointer;
 }
